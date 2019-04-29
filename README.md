@@ -14,10 +14,15 @@ allprojects {
 
 **Step 2.** **Add the dependency**
 
- [![](https://jitpack.io/v/MyFisherTiger/XRefreshLayout.svg)](https://jitpack.io/#MyFisherTiger/XRefreshLayout)
-
 ```groovy
 dependencies {
 	compile 'com.github.MyFisherTiger:XRefreshLayout:lastest release here'
 }
 ```
+# 更新说明
+
+v1.0
+首次开源框架RecyclerView+Adapter+Retrofit+RxJava+MVP+DataManager+基本Base
+
+
+# 本说明会根据需要版本迭代持续更新，建议star收藏，便于查看。也欢迎大家提出更多建议。
