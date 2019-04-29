@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply from : "config.gradle"
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion app.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.recyclerview
+
+    /**
+     * 动画集合
+     * https://github.com/81813780/AVLoadingIndicatorView
+     */
+    implementation thirdDependencies.avi
+    /**
+     * https://github.com/wasabeef/glide-transformations
+     * 高斯模糊的Glide
+     */
+    implementation thirdDependencies.glideTransformation
+    /**
+     * retrofit和rxjava
+     */
+    compile thirdDependencies.rxjava
+    compile thirdDependencies.rxandroid
+    compile thirdDependencies.retrofit
+    compile thirdDependencies.gsonConverter
+    compile thirdDependencies.rxjavaAdapter
+    compile thirdDependencies.loggingInterceptor
+}
