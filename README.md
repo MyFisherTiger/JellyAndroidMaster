@@ -16,7 +16,7 @@ allprojects {
 
 ```groovy
 dependencies {
-	compile 'com.github.MyFisherTiger:XRefreshLayout:lastest release here'
+	implementation 'com.github.MyFisherTiger:JellyAndroidMaster:1.0'
 }
 ```
 # 更新说明
