@@ -35,8 +35,8 @@ public class FragmentRealm extends BaseFragment {
 			case R.id.saveBtn:
 				user=new User();
 				user.setId("132323");
-				user.setName("Young1");
-				user.setAge(14);
+				user.setName("kejiashao");
+				user.setAge(18);
 				user.setAddress("广州市");
 				DataManager.getInstance(DataManager.DataType.REALM).saveOrUpdateWithPKByRealm(user);
 				showToast("保存成功");
