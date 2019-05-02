@@ -7,7 +7,7 @@
 
 	<include layout="@layout/common_toolbar"/>
 
-	<com.kjs.fishertiger.jellylibrary.customview.tablayout.CommonTabLayout
+	<com.kjs.fishertiger.jellylibrary.tablayout.CommonTabLayout
 		android:id="@+id/customTabView"
 		app:tab_tabTextColor="@color/black"
 		app:tab_tabSelectedTextColor="@color/colorPrimary"
