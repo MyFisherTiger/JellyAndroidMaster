@@ -7,7 +7,7 @@
 
 	<include layout="@layout/common_toolbar"/>
 
-	<com.kjs.fishertiger.jellylibrary.customview.tablayout.OutSideFrameTabLayout
+	<com.kjs.fishertiger.jellylibrary.tablayout.OutSideFrameTabLayout
 		android:id="@+id/customTabView"
 		app:tab_tabTextColor="@color/black"
 		app:tab_tabSelectedTextColor="@color/colorPrimary"
