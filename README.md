@@ -25,7 +25,7 @@ v1.0
 首次开源框架RecyclerView+Adapter+Retrofit+RxJava+MVP+DataManager+基本Base
 
 # 整体模块
-
+<image src="./screenshot/1.gif" width="180px"/> <image src="./screenshot/2.gif" width="180px"/> <image src="./screenshot/3.gif" width="180px"/>
 # MVP+RxJava+Retrofit的封装使用
 
 ### 1.在使用Retrofit请求网络之前需要进行配置，在框架中提供了了Config配置类
