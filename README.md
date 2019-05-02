@@ -174,5 +174,134 @@ protected RxObservableListener(BaseView view, String errorMsg){
 
 通过DataManager的网络请求方式会返回来一个DisposableObserver，需要把它通过rxManager.addObserver()添加进CompositeDisposable才能正常执行.
 
+# Base的使用
+### Base封装了MVP和项目的基类
+MVP
+BaseModel
+BaseView
+BasePresenter
 
-# 本说明会根据需要版本迭代持续更新，建议star收藏，便于查看。也欢迎大家提出更多建议。
+### 在项目中的网络请求+MVP的完整实现
+定义一个contract类，内部分别继承上面的MVP base类，在这里定义操作
+
+```
+public interface WeChatChinaNewsContract {
+
+	interface Model extends BaseModel{
+		Observable<Result<List<WeChatNews>>> loadChinaNews(int page, int num);
+	}
+
+	interface View extends BaseView{
+		void refreshUI(List<WeChatNews> weChatNews);
+	}
+
+	abstract class Presenter extends BasePresenter<Model,View>{
+		public abstract void requestChinaNews(int page,int num);
+	}
+}
+```
+Presenter的具体执行类
+```
+public class WeChatChinaNewsPresenter extends WeChatChinaNewsContract.Presenter {
+	@Override
+	public void requestChinaNews(int page, int num) {
+
+		rxManager.addObserver(RequestManager.loadOnlyNetWork(mModel.loadChinaNews(page, num),
+            new RxObservableListener<Result<List<WeChatNews>>>(mView) {
+                @Override
+                public void onNext(Result<List<WeChatNews>> result) {
+                    mView.refreshUI(result.getNewslist());
+                }
+            }));
+
+	}
+}
+```
+
+Model的具体执行类
+```
+public class WeChatChinaNewsModel implements WeChatChinaNewsContract.Model {
+	@Override
+	public Observable<Result<List<WeChatNews>>> loadChinaNews(int page, int num) {
+
+		Map<String,Object> map= ApiClient.getRequiredBaseParam();
+		map.put("page",page);
+		map.put("num",num);
+		return RetrofitManager.getApiService(ApiService.class)
+			.getWeChatChinaNews(ApiUrl.URL_WETCHAT_CHINA_NEWS,map);
+	
+	}
+}
+```
+view层
+```
+public class FragmentChinaNews extends BaseFragment<WeChatChinaNewsModel,WeChatChinaNewsPresenter> implements WeChatChinaNewsContract.View{
+
+	@Override
+	public void init() {
+	}
+
+	@Override
+	public void requestData() {
+		((WeChatChinaNewsPresenter)mPresenter).requestChinaNews(pageSize,PAGE_SIZE);
+	}
+
+	@Override
+	public void refreshUI(List<WeChatNews> newsList) {
+
+	}
+
+	@Override
+	public void onError(String errorMsg) {
+	}
+}
+```
+### UI Base
+(1)IBaseActivity
+IBaseActivity:主要提供了一个页面的基本方法、处理了MVP之间的关联、使用者可以直接继承该类使用、也可以继承该类实现扩展。
+
+IBaseActivity<T extends BaseModel, E extends BasePresenter>已经进行MVP之间的传递和关联。
+
+处理好页面销毁之后Observables 和 Subscribers的解绑。
+
+getLayoutId()设置布局、init()数据初始化、requestData()请求数据，执行顺序已经在IBaseActivity做好处理。
+
+可以继承IBaseActivity进行扩展。
+```
+public abstract class BaseActivity<T extends BaseModel,E extends BasePresenter> extends IBaseActivity{ 
+	private Unbinder unbinder;
+	 @Override
+ 	protected void onCreate(@Nullable Bundle savedInstanceState) {
+ 	super.onCreate(savedInstanceState);
+	   	unbinder= ButterKnife.bind(this);
+ 	}
+}
+```
+
+(2)IBaseFragment
+IBaseFragment:主要提供一个页面的基本方法，处理了MVP之间的关联，该类已经加入了懒人加载的控制方式、使用者可以直接继承该类使用、也可以继承该类实现扩展。
+
+IBaseFragment<T extends BaseModel,E extends BasePresenter>已经进行MVP之间的传递和关联。
+
+处理好页面销毁之后Observables 和 Subscribers的解绑。
+
+加入了懒人加载方式，只有页面显示才会调用requestData()请求数据，并只会调用一次。
+
+getLayoutId()设置布局、init()数据初始化、requestData()请求数据，执行顺序已经在IBaseFragment做好处理。
+
+可以继承IBaseFragment进行扩展。
+```
+public abstract class BaseFragment<T extends BaseModel,E extends BasePresenter> extends IBaseFragment {
+
+ 	private Unbinder unbinder;
+
+ 	@Nullable
+ 	@Override
+ 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+ 		super.onCreateView(inflater, container, savedInstanceState);
+ 		unbinder= ButterKnife.bind(this,mainView);
+ 		return mainView;
+ 	}
+ }
+```
+更多请查看例子的使用
