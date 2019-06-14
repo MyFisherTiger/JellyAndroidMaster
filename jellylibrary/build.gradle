@@ -37,19 +37,19 @@ dependencies {
      * 动画集合
      * https://github.com/81813780/AVLoadingIndicatorView
      */
-    implementation thirdDependencies.avi
+    api thirdDependencies.avi
     /**
      * https://github.com/wasabeef/glide-transformations
      * 高斯模糊的Glide
      */
-    implementation thirdDependencies.glideTransformation
+    api thirdDependencies.glideTransformation
     /**
      * retrofit和rxjava
      */
-    compile thirdDependencies.rxjava
-    compile thirdDependencies.rxandroid
-    compile thirdDependencies.retrofit
-    compile thirdDependencies.gsonConverter
-    compile thirdDependencies.rxjavaAdapter
-    compile thirdDependencies.loggingInterceptor
+    api thirdDependencies.rxjava
+    api thirdDependencies.rxandroid
+    api thirdDependencies.retrofit
+    api thirdDependencies.gsonConverter
+    api thirdDependencies.rxjavaAdapter
+    api thirdDependencies.loggingInterceptor
 }
