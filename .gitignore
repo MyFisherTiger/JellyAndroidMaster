@@ -1,7 +1,9 @@
 *.iml
 *.apk
 *.gradle
+*.idea
 /local.properties
 /build
 /captures
-/idea
+/.idea
+
