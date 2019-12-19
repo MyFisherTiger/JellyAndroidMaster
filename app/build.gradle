@@ -4,6 +4,8 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 28
+    buildToolsVersion app.buildToolsVersion
+
     defaultConfig {
         applicationId "com.kjs.fishertiger.jelly_android_master"
         minSdkVersion app.minSdkVersion

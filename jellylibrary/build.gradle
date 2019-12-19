@@ -4,6 +4,7 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion app.compileSdkVersion
+    buildToolsVersion app.buildToolsVersion
 
     defaultConfig {
         minSdkVersion app.minSdkVersion
@@ -30,14 +31,16 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation supportDependencies.appCompat
-    implementation supportDependencies.recyclerview
+    api supportDependencies.appCompat
+    api supportDependencies.recyclerview
 
     /**
      * 动画集合
      * https://github.com/81813780/AVLoadingIndicatorView
      */
     api thirdDependencies.avi
+
+    api thirdDependencies.glide
     /**
      * https://github.com/wasabeef/glide-transformations
      * 高斯模糊的Glide
