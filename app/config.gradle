@@ -1,14 +1,14 @@
 ext {
-    supportLibrary = "28.0.0"
+    supportLibrary = "1.0.0"
 
     supportDependencies = [
             //appCompat: "com.android.support:appcompat-v7:${supportLibrary}",
     ]
 
     thirdDependencies = [
-            butterknife        : "com.jakewharton:butterknife:8.8.1",
-            butterknifeCompiler: "com.jakewharton:butterknife-compiler:8.8.1",
-            multidex           : "com.android.support:multidex:1.0.1"
+            butterknife        : "com.jakewharton:butterknife:10.2.0",
+            butterknifeCompiler: "com.jakewharton:butterknife-compiler:10.2.0",
+            multidex           : 'androidx.multidex:multidex:2.0.0'
     ]
 
     app = [

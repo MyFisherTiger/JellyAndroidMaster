@@ -1,7 +1,7 @@
 package com.kjs.fishertiger.jelly_android_master.activity;
 
 import android.content.Intent;
-import android.support.v7.widget.GridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 

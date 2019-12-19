@@ -1,6 +1,6 @@
 package com.kjs.fishertiger.jellylibrary.base;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import java.util.List;
 

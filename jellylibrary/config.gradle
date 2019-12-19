@@ -1,12 +1,11 @@
 ext {
-    supportLibrary = "28.0.0"
+    supportLibrary = "1.0.0"
 
     supportDependencies = [
-            appCompatv4 : "com.android.support:appcompat-v4:${supportLibrary}",
-            appCompatv7 : "com.android.support:appcompat-v7:${supportLibrary}",
-            recyclerview: "com.android.support:recyclerview-v7:${supportLibrary}",
-            design      : "com.android.support:design:${supportLibrary}",
-            cardView    : "com.android.support:cardview-v7:${supportLibrary}"
+            appCompat  : "androidx.appcompat:appcompat:${supportLibrary}",
+            recyclerview: "androidx.recyclerview:recyclerview:${supportLibrary}",
+            design      : "com.google.android.material:material:${supportLibrary}",
+            cardView    : "androidx.cardview:cardview:${supportLibrary}"
     ]
 
     thirdDependencies = [
@@ -23,7 +22,7 @@ ext {
 
     app = [
             compileSdkVersion: 29,
-            buildToolsVersion: "28.0.0",
+            buildToolsVersion: "28.0.3",
             minSdkVersion    : 21,
             targetSdkVersion : 28,
             versionCode      : 1,

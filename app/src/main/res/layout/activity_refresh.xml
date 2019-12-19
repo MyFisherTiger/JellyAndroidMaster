@@ -7,7 +7,7 @@
 
     <include layout="@layout/common_toolbar" />
     
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -19,7 +19,7 @@
         app:tabSelectedTextColor="@color/colorPrimaryDark"
         app:tabTextColor="@android:color/black">
 
-    </android.support.design.widget.TabLayout>
+    </com.google.android.material.tabs.TabLayout>
 
     <com.kjs.fishertiger.jelly_android_master.widget.CollectionViewPager
         android:id="@+id/collectionVp"

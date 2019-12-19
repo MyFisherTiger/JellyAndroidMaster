@@ -1,7 +1,7 @@
 package com.kjs.fishertiger.jelly_android_master.mvp.ui.wechat.activity;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.Fragment;
 
 import com.kjs.fishertiger.jelly_android_master.R;
 import com.kjs.fishertiger.jelly_android_master.adapter.CollectionFragmentAdapter;

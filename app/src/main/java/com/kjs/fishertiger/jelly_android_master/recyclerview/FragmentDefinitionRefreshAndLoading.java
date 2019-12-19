@@ -1,7 +1,7 @@
 package com.kjs.fishertiger.jelly_android_master.recyclerview;
 
 import android.os.Handler;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 
 import com.kjs.fishertiger.jelly_android_master.R;

@@ -1,8 +1,8 @@
 package com.kjs.fishertiger.jellylibrary.refreshrecyclerview.base.helper;
 
 import android.graphics.Canvas;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 
 /**
  * 拖拽的Base，自定义可以继承该类，然后重写相对应的方法，写自己的逻辑

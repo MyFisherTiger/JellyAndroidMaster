@@ -1,7 +1,7 @@
 package com.kjs.fishertiger.jelly_android_master.activity.base.activity;
 
 import android.Manifest;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.kjs.fishertiger.jelly_android_master.R;
 import com.kjs.fishertiger.jelly_android_master.base.BaseActivity;

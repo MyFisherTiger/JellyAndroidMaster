@@ -1,7 +1,7 @@
 package com.kjs.fishertiger.jelly_android_master.mvp.ui.wechat.fragment;
 
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.kjs.fishertiger.jelly_android_master.R;

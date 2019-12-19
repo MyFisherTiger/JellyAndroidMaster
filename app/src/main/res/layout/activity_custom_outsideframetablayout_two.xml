@@ -28,7 +28,7 @@
 		app:tab_padding="10dp"/>
 
 
-	<android.support.v4.view.ViewPager
+	<androidx.viewpager.widget.ViewPager
 
 		android:id="@+id/viewPager"
 		android:layout_width="match_parent"
