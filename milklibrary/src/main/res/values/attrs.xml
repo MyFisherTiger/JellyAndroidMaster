@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CommonTabLayout">
+        <attr name="tab_tabIndicatorWidth" />
+        <attr name="tab_tabIndicatorHeight" />
+        <attr name="tab_tabIndicatorColor" />
+        <attr name="tab_indicator_marginLeft" />
+        <attr name="tab_indicator_marginRight" />
+        <attr name="tab_indicator_marginTop" />
+        <attr name="tab_indicator_marginBottom" />
+        <attr name="tab_tabTextColor" />
+        <attr name="tab_tabTextSize" />
+        <attr name="tab_tabSelectedTextColor" />
+        <attr name="tab_padding" />
+        <attr name="tab_tabBackground" />
+        <attr name="tab_tabContentStart" />
+        <attr name="tab_indicator_corner" />
+        <attr name="tab_textAllCaps" />
+        <attr name="tab_indicator_gravity">
+            <enum name="bottom" value="0" />
+            <enum name="top" value="1" />
+        </attr>
+        <attr name="tab_tabMode">
+            <enum name="scrollable" value="0" />
+            <enum name="fixed" value="1" />
+        </attr>
+        <attr name="tab_indicator_style">
+            <enum name="line" value="0" />
+            <enum name="triangle" value="1" />
+            <enum name="block" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="OutSideFrameTabLayout">
+        <attr name="tab_tabIndicatorColor" />
+        <attr name="tab_indicator_corner" />
+        <attr name="tab_indicator_marginLeft" />
+        <attr name="tab_indicator_marginRight" />
+        <attr name="tab_indicator_marginTop" />
+        <attr name="tab_indicator_marginBottom" />
+        <attr name="tab_tabTextColor" />
+        <attr name="tab_tabTextSize" />
+        <attr name="tab_tabSelectedTextColor" />
+        <attr name="tab_padding" />
+        <attr name="tab_textAllCaps" />
+        <attr name="tab_bar_color" />
+        <attr name="tab_bar_stroke_color" />
+        <attr name="tab_bar_stroke_width" />
+        <attr name="tab_width" />
+    </declare-styleable>
+</resources>
