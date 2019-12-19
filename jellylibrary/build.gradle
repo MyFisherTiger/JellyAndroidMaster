@@ -31,7 +31,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api supportDependencies.appCompat
+    api supportDependencies.appCompatv4
+    api supportDependencies.appCompatv7
+    api supportDependencies.cardView
+    api supportDependencies.design
     api supportDependencies.recyclerview
 
     /**

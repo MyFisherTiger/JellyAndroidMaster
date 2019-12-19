@@ -36,11 +36,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation supportDependencies.appCompat
-    implementation supportDependencies.cardView
-    implementation supportDependencies.design
     implementation thirdDependencies.butterknife
-
     annotationProcessor thirdDependencies.butterknifeCompiler
     implementation thirdDependencies.multidex
 
