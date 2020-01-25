@@ -7,3 +7,9 @@
 /captures
 /.idea
 
+.DS_Store
+app/.DS_Store
+gradle/.DS_Store
+jellylibrary/.DS_Store
+jellylibrary/src/.DS_Store
+screenshot/.DS_Store
